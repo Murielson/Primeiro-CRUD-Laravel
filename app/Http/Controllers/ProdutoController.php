@@ -16,7 +16,17 @@ class ProdutoController extends Controller
      */
     public function index()
     {   
-        $produtos = Produto::all();
+        $produtos = Categoria::with('produtos')->get();
+        // foreach($produtos as $item){
+        //     foreach($item->produtos()->where('id', '1') as $produto){
+        //         echo $produto->nome;
+        //     }
+            
+        // }
+          $produtos = Produto::with('categoria')->get();
+        // foreach($produtos as $item){
+        //     echo $item->produtos;
+        // }
         return view('produto', compact('produtos'));
         
     }

@@ -23,7 +23,7 @@
                             <td>{{$item->nome}}</td>
                             <td>R$ - {{$item->preco}}</td>
                             <td>{{$item->estoque}}</td>
-                            <td>{{$item->categoria_id}}</td>
+                            <td>{{$item->categoria->nome}}</td>
                             <td>
                                 <a href="{{ route('editProd', ['id'=>$item->id]) }}" class="btn btn-primary">Editar</a>
                                 <a href="{{ route('destroyProd', ['id'=>$item->id]) }}" class="btn btn-danger">Remover</a>
